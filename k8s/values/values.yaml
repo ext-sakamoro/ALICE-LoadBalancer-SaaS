@@ -1,19 +1,17 @@
 global:
-  domain: ALICE_LOADBALANCER.alice-platform.com
+  domain: alice-loadbalancer.alice-platform.com
 frontend:
   replicas: 2
-  image: ALICE_LOADBALANCER/frontend:latest
+  image: alice-loadbalancer/frontend:latest
   resources: { requests: { cpu: 100m, memory: 128Mi }, limits: { cpu: 500m, memory: 512Mi } }
 apiGateway:
   replicas: 2
-  image: ALICE_LOADBALANCER/api-gateway:latest
+  image: alice-loadbalancer/api-gateway:latest
   resources: { requests: { cpu: 200m, memory: 256Mi }, limits: { cpu: 1000m, memory: 1Gi } }
 coreEngine:
   replicas: 2
-  image: ALICE_LOADBALANCER/core-engine:latest
+  image: alice-loadbalancer/core-engine:latest
   resources: { requests: { cpu: 500m, memory: 512Mi }, limits: { cpu: 2000m, memory: 2Gi } }
-redis:
-  image: redis:7-alpine
 autoscaling:
   enabled: true
   minReplicas: 2
