@@ -1,6 +1,6 @@
 name: ALICE LoadBalancer CI
 on:
-  push: { branches: [main] }
+  push: { branches: [main, 'ci/**'] }
   pull_request: { branches: [main] }
 jobs:
   test-rust:
